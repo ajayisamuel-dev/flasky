@@ -1,0 +1,46 @@
+{% extends "father.html" %}
+
+{%block body%}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1 class="heading-one">Home Page</h1>
+<div class="home">
+    <section class="about">
+        <h2 class="heading-two">About</h2>
+        <p> Samuel A. is a python automation specialist with a variety of side skills at which he also excels.
+            His expertise lie in the use frameworks such as Selenium and BeautifulSoup to scrape data from websites and convert them into 
+            useful information for his clients. He also builds custom GUIs for multipurpose uses.
+        </p>
+        <a href="#">Learn More...</a>
+    </section>
+
+    <section class="contact">
+        <h2 class="heading-two">Contact</h2>
+        <p> You can contact us through any of the following methods: </p>
+        <ul class="contacts" style="list-style-type: circle;">
+            <li>@0x_belmont</li>
+            <li>ajayisamuel0426@gmail.com</li>
+            <li>>+234 905 439 1113</li>
+            <li>@belmonttg</li>
+        </ul>
+    </section>
+
+    <section class="services">
+        <h2 class="heading-two">Services</h2>
+        <p> Our services include but not limited to: </p>
+            <ul class="service-list" style="list-style-type: circle;">
+                <li>Automation Scripting</li>
+                <li>Flask Applications</li>
+                <li>Backend Development</li>
+                <li>Custom GUIs</li>
+            </ul>
+        <a href="#">See More..</a>
+    </section>
+</div>
+
+{%endblock%}

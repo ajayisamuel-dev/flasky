@@ -1,0 +1,35 @@
+{% extends "father.html" %}
+{% block title %} Login Page {%endblock%}
+
+{%block body%}
+<div class="form_div">
+    <form action="/login" method="POST" class="forms">
+        <h2 class="heading-two">Admin Login</h2>
+         {%with messages = get_flashed_messages()%}
+            {%if messages%}
+                {%for msg in messages%}
+                <div class="flash_message">
+                    <span class="login_flash">{{msg}}</span>
+                    <button class="close_btn" onclick="this.parentElement.style.display='none';">
+                        &times;
+                    </button>
+                </div>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+        <label for="nm">Username: </label>
+        <input type="text" name="nm" class="form_inputs" required/>
+        <label for="pass">Password:</label>
+        <input type="password" name="pass" required class="form_inputs"/>
+        <p><button type="submit" class="form_btn mt-10">Sign in</button></p>
+        <div class="form-footer">
+            <a href="/reset">Forgot password? </a>
+            <a href="/signup">Create new account...</a>
+        </div>
+    </form>
+</div>
+{%endblock%}
+
+{% block footer%}
+{{pass}}
+{%endblock%}

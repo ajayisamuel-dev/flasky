@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styling.css')}}">
+
+    <nav>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            
+            <li class="dropdown">
+            <a href="#" class="dropbtn">Account</a>
+            <ul class="dropdown-content">
+                <li><a href="/admin">Admin</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Signup</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+            </li>
+        </ul>
+    </nav>
+
+</head>
+<body>
+    {%block body%}
+
+    {%endblock%}
+{%block footer%}
+    <footer>
+        <span class="footer_links">
+            <a href="/home">Home</a>
+            <a href="/admin">Admin</a>
+            <a href="/login">Login</a>
+            <a href="/signup">Signup</a>
+            <a href="/logout">Logout</a>
+        </span>
+        <span>
+            <img src=""/>
+            <img src=""/>
+            <img src=""/>
+            <img src=""/>
+        </span>
+        <h2 class="heading-two">Belmont Inc. &copy;</h2>
+    </footer>
+{%endblock%}
+</body>
